@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>nl.top-squad.autoprefix-commit</id>
+
+    <name>Autoprefix Commit Messages</name>
+
+    <vendor url="https://www.top-squad.nl">TopSquad</vendor>
+
+    <description><![CDATA[
+    Automatically adds the branch name to the git commit message.
+    There are other plugins that do (did) that. But they were unmaintained and did not work.
+  ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+<!--        <postStartupActivity implementation="nl.topsquad.autoprefixcommit.APCProjectActivity"/>-->
+        <checkinHandlerFactory implementation="nl.topsquad.autoprefixcommit.BranchNameCheckinHandlerFactory"/>
+    </extensions>
+</idea-plugin>
