@@ -7,6 +7,6 @@ import com.intellij.openapi.startup.ProjectActivity
 class APCProjectActivity: ProjectActivity {
 
     override suspend fun execute(project : Project){
-        thisLogger().warn("Autoprefixer Commit is active")
+        thisLogger().warn("Autoprefix-commit plugin is active")
     }
 }

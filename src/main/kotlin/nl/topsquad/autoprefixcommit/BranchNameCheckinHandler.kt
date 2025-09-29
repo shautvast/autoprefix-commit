@@ -28,7 +28,7 @@ class BranchNameCheckinHandlerFactory : CheckinHandlerFactory() {
                 val repository = GitRepositoryManager.getInstance(panel.project).repositories.firstOrNull()
 
                 return repository?.let {
-                    val branchName = it.currentBranchName;
+                    val branchName = it.currentBranchName
                     if (branchName != null && !message.startsWith("${branchName} ")) {
                         "${it.currentBranchName ?: ""} ${message} "
                     } else {
