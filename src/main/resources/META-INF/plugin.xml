@@ -1,9 +1,9 @@
 <idea-plugin>
-    <id>nl.top-squad.autoprefix-commit</id>
+    <id>com.github.shautvast.autoprefix-commit</id>
 
     <name>Autoprefix Commit Messages</name>
 
-    <vendor url="https://www.top-squad.nl">TopSquad</vendor>
+    <vendor url="https://github.com/shautvast">my github profile</vendor>
 
     <description><![CDATA[
     Automatically adds the branch name to the git commit message.
@@ -14,7 +14,6 @@
     <depends>Git4Idea</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-<!--        <postStartupActivity implementation="nl.topsquad.autoprefixcommit.APCProjectActivity"/>-->
-        <checkinHandlerFactory implementation="nl.topsquad.autoprefixcommit.BranchNameCheckinHandlerFactory"/>
+        <checkinHandlerFactory implementation="com.github.shautvast.autoprefixcommit.BranchNameCheckinHandlerFactory"/>
     </extensions>
 </idea-plugin>

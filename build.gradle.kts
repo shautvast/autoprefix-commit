@@ -1,11 +1,11 @@
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.9.20"
-    id("org.jetbrains.intellij.platform") version "2.3.0"
+    id("org.jetbrains.kotlin.jvm") version "2.2.0"
+    id("org.jetbrains.intellij.platform") version "2.9.0"
 }
 
 group = "com.github.shautvast"
-version = "1.0"
+version = "1.1"
 
 repositories {
     mavenCentral()
@@ -14,13 +14,9 @@ repositories {
     }
 }
 
-kotlin {
-    jvmToolchain(17)
-}
-
 dependencies {
     intellijPlatform {
-        create("IC", "2024.2.5")
+        create("IC", "2025.2.2")
         testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
         bundledPlugin("Git4Idea")
     }
@@ -31,7 +27,7 @@ dependencies {
 intellijPlatform {
     pluginConfiguration {
         ideaVersion {
-            sinceBuild = "242"
+            sinceBuild = "252"
         }
 
         changeNotes = """
@@ -40,13 +36,3 @@ intellijPlatform {
     }
 }
 
-tasks {
-    // Set the JVM compatibility versions
-    withType<JavaCompile> {
-        sourceCompatibility = "21"
-        targetCompatibility = "21"
-    }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "21"
-    }
-}
