@@ -1,12 +1,54 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M32.0845 7.94025V4H24.0203V7.9896H16.029V4H7.91553V7.94025H4V36H16.0044V32.0045C16.0058 30.9457 16.4274 29.9308 17.1766 29.1826C17.9258 28.4345 18.9412 28.0143 20 28.0143C21.0588 28.0143 22.0743 28.4345 22.8234 29.1826C23.5726 29.9308 23.9942 30.9457 23.9956 32.0045V36H36V7.94025H32.0845Z"
-          fill="url(#paint0_linear)"/>
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <linearGradient id="paint0_linear" x1="2.94192" y1="4.89955" x2="37.7772" y2="39.7345"
-                        gradientUnits="userSpaceOnUse">
-            <stop offset="0.15937" stop-color="#3BEA62"/>
-            <stop offset="0.5404" stop-color="#3C99CC"/>
-            <stop offset="0.93739" stop-color="#6B57FF"/>
+        <linearGradient id="branchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8C3AED;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#A855F7;stop-opacity:1"/>
+        </linearGradient>
+        <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#000;stop-opacity:0"/>
+            <stop offset="100%" style="stop-color:#A855F7;stop-opacity:1"/>
+        </linearGradient>
+        <linearGradient id="commitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#10B981;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#14B8A6;stop-opacity:1"/>
         </linearGradient>
     </defs>
+
+    <!-- Subtle background -->
+    <circle cx="32" cy="32" r="30" fill="url(#circleGrad)" opacity="0.2"/>
+
+    <!-- Git branch with gentle curves -->
+    <g transform="translate(-4, 0)">
+        <!-- Main branch line -->
+        <line x1="18" y1="20" x2="18" y2="44" stroke="url(#branchGrad)" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Branch line with curve -->
+        <path d="M 18 28 Q 24 28, 28 32 L 28 40" stroke="url(#branchGrad)" stroke-width="2.5" stroke-linecap="round"
+              fill="none"/>
+
+        <!-- Branch nodes -->
+        <circle cx="18" cy="20" r="4" fill="url(#branchGrad)"/>
+        <circle cx="18" cy="44" r="4" fill="url(#branchGrad)"/>
+        <circle cx="28" cy="40" r="4" fill="url(#branchGrad)"/>
+    </g>
+
+
+    <!-- Commit message card -->
+    <g transform="translate(36, 22)">
+        <!-- Subtle shadow -->
+        <rect x="0.5" y="0.5" width="20" height="20" rx="2" fill="#000" opacity="0.1"/>
+        <!-- Card with gradient -->
+        <rect x="0" y="0" width="20" height="20" rx="2" fill="url(#commitGrad)" opacity="0.85"/>
+        <!-- Text lines -->
+        <line x1="3" y1="5" x2="13" y2="5" stroke="#FFF" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
+        <line x1="3" y1="8.5" x2="11" y2="8.5" stroke="#FFF" stroke-width="1.5" stroke-linecap="round" opacity="0.75"/>
+        <line x1="3" y1="12" x2="8" y2="12" stroke="#FFF" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    </g>
+
+    <!-- Arrow indicating automation -->
+    <g transform="translate(26, 30)">
+        <path d="M 0 0 L 10 0 M 7 -3 L 10 0 L 7 3" opacity="0.5" stroke="#000981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+
 </svg>
