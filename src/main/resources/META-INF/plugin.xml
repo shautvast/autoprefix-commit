@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.github.shautvast.autoprefix-commit</id>
+    <id>nl.top-squad.autoprefix-commit</id>
 
     <name>Autoprefix Commit Messages</name>
 
