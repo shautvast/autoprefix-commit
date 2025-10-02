@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.shautvast"
-version = "1.1"
+version = "1.2"
 
 repositories {
     mavenCentral()
@@ -31,7 +31,8 @@ intellijPlatform {
         }
 
         changeNotes = """
-      Initial version: insert branchname in commit dialog. No configuration needed.
+      1.1 Initial version: insert branchname in commit dialog. No configuration needed.
+      1.2 No code changes. Plugin was mistakenly compiled using jdk22 so it didn't work.
     """.trimIndent()
     }
 }
