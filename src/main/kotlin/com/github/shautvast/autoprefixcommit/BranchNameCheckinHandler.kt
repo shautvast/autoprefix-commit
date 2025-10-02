@@ -19,24 +19,17 @@ class BranchNameCheckinHandlerFactory : CheckinHandlerFactory() {
                 (panel.preferredFocusedComponent)?.addFocusListener(object : FocusAdapter() {
                     override fun focusGained(e: FocusEvent?) {
                         // update commit message
-                        val currentMessage = panel.commitMessage
-                        val modifiedMessage = modifyCommitMessage(currentMessage)
-                        panel.commitMessage = modifiedMessage
+                        val message = panel.commitMessage
+                        val repository = GitRepositoryManager.getInstance(panel.project).repositories.firstOrNull()
+                        repository?.let {
+                            it.currentBranchName?.let { b ->
+                                if (!message.startsWith(b)) {
+                                    panel.commitMessage = "$b $message"
+                                }
+                            }
+                        }
                     }
                 })
-            }
-
-            fun modifyCommitMessage(message: String): String {
-                val repository = GitRepositoryManager.getInstance(panel.project).repositories.firstOrNull()
-
-                return repository?.let {
-                    val branchName = it.currentBranchName
-                    if (branchName != null && !message.startsWith("${branchName} ")) {
-                        "${it.currentBranchName ?: ""} ${message}"
-                    } else {
-                        message
-                    }
-                } ?: message
             }
         }
     }
