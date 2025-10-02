@@ -32,7 +32,7 @@ class BranchNameCheckinHandlerFactory : CheckinHandlerFactory() {
                 return repository?.let {
                     val branchName = it.currentBranchName
                     if (branchName != null && !message.startsWith("${branchName} ")) {
-                        "${it.currentBranchName ?: ""} ${message} "
+                        "${it.currentBranchName ?: ""} ${message}"
                     } else {
                         message
                     }

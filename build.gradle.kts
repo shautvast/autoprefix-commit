@@ -20,8 +20,6 @@ dependencies {
         testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
         bundledPlugin("Git4Idea")
     }
-
-
 }
 
 intellijPlatform {
@@ -33,6 +31,7 @@ intellijPlatform {
         changeNotes = """
       1.1 Initial version: insert branchname in commit dialog. No configuration needed.
       1.2 No code changes. Plugin was mistakenly compiled using jdk22 so it didn't work.
+      1.3 minor fix for redundant space after the branch name
     """.trimIndent()
     }
 }
