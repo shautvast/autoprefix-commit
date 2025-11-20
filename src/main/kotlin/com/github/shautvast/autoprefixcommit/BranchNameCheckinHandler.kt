@@ -24,7 +24,7 @@ class BranchNameCheckinHandlerFactory : CheckinHandlerFactory() {
                         repository?.let {
                             it.currentBranchName?.let { b ->
                                 if (!message.startsWith(b)) {
-                                    panel.commitMessage = "$b $message"
+                                    panel.commitMessage = "#$b $message"
                                 }
                             }
                         }
